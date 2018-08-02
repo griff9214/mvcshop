@@ -10,6 +10,7 @@ class ProductController
 {
     public function actionDisplayItem(int $id)
     {
+        $product = ProductModel::getById($id);
         require_once ROOT . "/Views/product/DisplayItem.php";
     }
 }

@@ -10,6 +10,15 @@ class ProductModel
 {
     public static $perPage = 6;
 
+    public static function getById(int $id)
+    {
+        global $DB;
+        $res = $DB->prepare("SELECT * FROM `products` WHERE `id` = $id");
+        $res->execute();
+        $res->setFetchMode(PDO::FETCH_ASSOC);
+        return $res->fetch(PDO::FETCH_ASSOC);
+    }
+
     public static function getByCategoryId(int $id, int $page)
     {
         global $DB;

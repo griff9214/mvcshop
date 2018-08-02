@@ -58,7 +58,7 @@ include ROOT . "/Views/layouts/header.php";
             include ROOT."/Views/layouts/sidebar.php";
             ?>
             <div id="content" class="float_r">
-                <h1>Product Detail</h1>
+                <h1><?= $product['name'];?></h1>
                 <div class="content_half float_l">
                     <a  rel="lightbox[portfolio]" href="images/product/10_l.jpg"><img src="images/product/10.jpg" alt="image" /></a>
                 </div>
@@ -66,7 +66,7 @@ include ROOT . "/Views/layouts/header.php";
                     <table>
                         <tr>
                             <td width="160">Price:</td>
-                            <td>$100</td>
+                            <td><?= $product['price'];?></td>
                         </tr>
                         <tr>
                             <td>Availability:</td>
@@ -82,7 +82,7 @@ include ROOT . "/Views/layouts/header.php";
                         </tr>
                         <tr>
                             <td>Quantity</td>
-                            <td><input type="text" value="1" style="width: 20px; text-align: right" /></td>
+                            <td><input type="text" value="<?=$product['quantity'];?>" style="width: 20px; text-align: right" /></td>
                         </tr>
                     </table>
                     <div class="cleaner h20"></div>
